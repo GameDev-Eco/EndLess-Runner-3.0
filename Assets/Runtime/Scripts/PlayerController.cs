@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     
     Vector3 initialPosition;
 
-    bool isJumping;
+    public bool IsJumping { get; private set; }
 
     float jumpStartZ;
 
@@ -55,9 +55,9 @@ public class PlayerController : MonoBehaviour
         {
             targetPositionX -= laneDistanceX;
         }
-        if (Input.GetKeyDown(KeyCode.W) && !isJumping)
+        if (Input.GetKeyDown(KeyCode.W) && !IsJumping)
         {
-            isJumping = true;
+            IsJumping = true;
             jumpStartZ = transform.position.z;
         }
 
@@ -77,13 +77,13 @@ public class PlayerController : MonoBehaviour
     private float ProcessJump() 
     {
         float deltaY = 0;
-        if (isJumping)
+        if (IsJumping)
         {
             float jumpCurrentProgress = transform.position.z - jumpStartZ;
             float jumpPercent = jumpCurrentProgress / jumpDistanceZ;
             if (jumpPercent >= 1)
             {
-                isJumping = false;
+                IsJumping = false;
                 return initialPosition.y;
             }
             else
