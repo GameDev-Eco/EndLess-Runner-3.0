@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
 
     public bool IsJumping { get; private set; }
 
+    public float JumpDuration => jumpDistanceZ / forwardSpeed;
+
     float jumpStartZ;
 
     float targetPositionX;
