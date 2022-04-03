@@ -5,9 +5,13 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float horizontalSpeed = 15;
+
     [SerializeField] private float forwardSpeed = 10;
+    
     [SerializeField] private float laneDistanceX = 4;
+    
     Vector3 initialPosition;
+    
     float targetPositionX;
 
     private float LeftLaneX => initialPosition.x - laneDistanceX;
@@ -15,7 +19,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake() 
     {
-        initialPosition = transform.position;    
+        initialPosition = transform.position;
     }
 
     private void Update() 
@@ -27,7 +31,8 @@ public class PlayerController : MonoBehaviour
         position.x = ProcessLaneMovement();
         position.z = ProcessForwardMovement();
 
-        transform.position = position;        
+        transform.position = position;
+
     }
 
     private void ProcessInput()
