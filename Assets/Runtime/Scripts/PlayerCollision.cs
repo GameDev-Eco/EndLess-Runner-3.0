@@ -15,6 +15,7 @@ public class PlayerCollision : MonoBehaviour
         player = GetComponent<PlayerController>();
         animationController = GetComponent<PlayerAnimationController>();
     }
+
     private void OnTriggerEnter(Collider other)
     {
         Obstacle obstacle = other.GetComponent<Obstacle>();
