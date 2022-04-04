@@ -96,4 +96,9 @@ public class PlayerController : MonoBehaviour
         }
         return initialPosition.y + deltaY;
     }
+
+    public void Die() 
+    {
+        enabled = false;
+    }
 }

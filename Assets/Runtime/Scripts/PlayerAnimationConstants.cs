@@ -5,4 +5,6 @@
     public const string IsJumping = "IsJumping";
 
     public const string StartGameTrigger = "StartGameTrigger";
+
+    public const string Die = "Die";
 }
