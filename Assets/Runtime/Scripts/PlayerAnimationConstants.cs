@@ -3,4 +3,6 @@
     public const string JumpMultiplier = "JumpMultiplier";
 
     public const string IsJumping = "IsJumping";
+
+    public const string StartGameTrigger = "StartGameTrigger";
 }
