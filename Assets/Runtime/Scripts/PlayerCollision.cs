@@ -6,6 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerAnimationController))]
 public class PlayerCollision : MonoBehaviour
 {
+    [SerializeField] GameMode gameMode;
+
     PlayerController player;
 
     PlayerAnimationController animationController;
@@ -23,6 +25,7 @@ public class PlayerCollision : MonoBehaviour
         {
             player.Die();
             animationController.Die();
+            gameMode.OnGameOver();
         }
     }
 }

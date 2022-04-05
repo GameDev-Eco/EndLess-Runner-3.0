@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+
     [SerializeField] private float horizontalSpeed = 15;
     [SerializeField] private float forwardSpeed = 10;
     [SerializeField] private float laneDistanceX = 4;
@@ -152,6 +153,8 @@ public class PlayerController : MonoBehaviour
 
     public void Die() 
     {
-        enabled = false;
+        forwardSpeed = 0;
+        StopJump();
+        StopRoll();
     }
 }
